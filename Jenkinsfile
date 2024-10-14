@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven' // Ensure Maven is installed and configured in Jenkins tools
+        maven 'Maven3' // Ensure Maven is installed and configured in Jenkins tools
     }
 
     stages {
