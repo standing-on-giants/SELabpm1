@@ -2,20 +2,19 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven3' // Ensure Maven is installed and configured in Jenkins tools
+        maven 'Maven3'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Check out code from the repository
-                git branch: 'master', url: 'https://github.com/tanmay2233/SELab.git'
+                git branch: 'master', 
+                url: 'https://github.com/tanmay2233/SELab.git'
             }
         }
 
         stage('Build') {
             steps {
-                // Run Maven build and package the project
                 script {
                     sh 'mvn clean install'
                 }
@@ -24,7 +23,6 @@ pipeline {
 
         stage('Test') {
             steps {
-                // Run Maven tests
                 script {
                     sh 'mvn test'
                 }
